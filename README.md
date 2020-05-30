@@ -1,9 +1,15 @@
 
 发送请求示例：
+
+```
 curl -d "邮件正文内容" "http://127.0.0.1/mail/dyy.php?to=1178175072@qq.com&subject=subject&who=dyy"
+
 curl -d @邮件正文内容文件 "http://127.0.0.1/mail/dyy.php?to=1178175072@qq.com&subject=subject&who=dyy"
+```
 
 nginx
+
+```
 server {
     listen 80;
     server_name 127.0.0.1;
@@ -25,9 +31,12 @@ server {
         fastcgi_param  HTTP_PROXY         "";
     }
 }
+```
 
 
 apache
+
+```
 <VirtualHost *:80>
     ServerName 127.0.0.1
     DocumentRoot /var/www/mail
@@ -41,4 +50,4 @@ apache
     ErrorLog /var/log/apache2/mail_error.log
     CustomLog /var/log/apache2/mail_access.log combined
 </VirtualHost>
-
+```
